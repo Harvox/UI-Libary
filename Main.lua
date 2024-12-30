@@ -674,7 +674,7 @@ limit1.Size = UDim2.new(0, 588, 0, 364)
 limit1.ZIndex = 5
 
 
-repeat wait() until game.Players.LocalPlayer
+repeat wait() until game:GetService("Players").LocalPlayer
 
 
 
@@ -705,7 +705,7 @@ function AddRipple(button,ael,ayo)
 	local function Ripple()
 		spawn(
 			function()
-				local Mouse = game.Players.LocalPlayer:GetMouse()
+				local Mouse = game:GetService("Players").LocalPlayer:GetMouse()
 				local Circle = Instance.new("ImageLabel")
 				Circle.Name = "Circle"
 				Circle.Parent = obj
@@ -755,7 +755,7 @@ function AddRipple(button,ael,ayo)
 	CornerRadius.Name = "CornerRadius"
 	CornerRadius.Parent = Background
 
-	local mouse = game.Players.LocalPlayer:GetMouse()
+	local mouse = game:GetService("Players").LocalPlayer:GetMouse()
 
 	local background = button:WaitForChild("Background")
 
@@ -1372,7 +1372,7 @@ function library:AddWindow(text)
 			Max = Max or 100
 			Min =Min or Max/4
 			def = def or Max/2
-			local mouse = game.Players.LocalPlayer:GetMouse()
+			local mouse = game:GetService("Players").LocalPlayer:GetMouse()
 			local SliderDef = math.clamp(def, Min, Max) or math.clamp(50, Min, Max)
 			local DefaultScale =  (SliderDef - Min) / (Max - Min)
 			Action = Action or function() end
